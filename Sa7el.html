@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل شاليهات الساحل الشمالي (ارجوك ياحاج جابر) 🌊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#FFF6E8;
+    --sand-deep:#FFE8C8;
+    --navy:#0B3B4A;
+    --navy-deep:#082B36;
+    --teal:#12A594;
+    --teal-dark:#0C7A6D;
+    --coral:#FF6F59;
+    --coral-dark:#E5533E;
+    --sun:#FFC145;
+    --white:#FFFFFF;
+    --muted:#5C7278;
+    --shadow: 0 10px 30px -12px rgba(11,59,74,0.25);
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--navy);
+    font-family:'Tajawal', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Cairo', sans-serif;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:radial-gradient(120% 160% at 20% 0%, #124E60 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color:var(--white);
+    padding:56px 24px 110px;
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero::before, .hero::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    opacity:0.5;
+  }
+  .hero::before{
+    width:70px;height:70px;
+    background:var(--sun);
+    top:38px; left:8%;
+    box-shadow: 0 0 40px 10px rgba(255,193,69,0.35);
+  }
+  .hero::after{
+    width:16px;height:16px;
+    background:var(--coral);
+    top:120px; right:14%;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-weight:700;
+    letter-spacing:.5px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:6px 16px;
+    border-radius:999px;
+    font-size:13px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px, 5vw, 46px);
+    font-weight:900;
+    margin:0 0 12px;
+    line-height:1.25;
+  }
+  .hero h1 span{color:var(--sun);}
+  .hero p.sub{
+    max-width:560px;
+    margin:0 auto 30px;
+    color:#CFE8E4;
+    font-size:16px;
+    line-height:1.8;
+  }
+  .stat-row{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .stat-pill{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    backdrop-filter:blur(4px);
+    padding:12px 22px;
+    border-radius:16px;
+    min-width:120px;
+  }
+  .stat-pill b{
+    display:block;
+    font-family:'Cairo',sans-serif;
+    font-size:24px;
+    color:var(--sun);
+  }
+  .stat-pill span{font-size:12px;color:#CFE8E4;}
+
+  .wave{
+    position:absolute;
+    bottom:-2px; left:0; right:0;
+    width:100%; height:90px;
+    display:block;
+  }
+
+  /* ===== SEARCH / NAV ===== */
+  .toolbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,246,232,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--sand-deep);
+    padding:14px 0;
+    margin-top:-64px;
+  }
+  .toolbar-inner{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  #search{
+    width:100%;
+    padding:12px 18px;
+    border-radius:14px;
+    border:2px solid var(--sand-deep);
+    background:var(--white);
+    font-family:'Tajawal',sans-serif;
+    font-size:15px;
+    color:var(--navy);
+    outline:none;
+    transition:border-color .2s;
+  }
+  #search:focus{border-color:var(--teal);}
+  #search::placeholder{color:#9AAEB2;}
+  .chips{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding-bottom:4px;
+    scrollbar-width:thin;
+  }
+  .chips::-webkit-scrollbar{height:5px;}
+  .chips::-webkit-scrollbar-thumb{background:var(--sand-deep);border-radius:10px;}
+  .chip{
+    flex:0 0 auto;
+    text-decoration:none;
+    color:var(--navy);
+    background:var(--white);
+    border:1.5px solid var(--sand-deep);
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:700;
+    white-space:nowrap;
+    transition:all .2s;
+  }
+  .chip:hover, .chip.active{
+    background:var(--teal);
+    border-color:var(--teal);
+    color:var(--white);
+  }
+
+  /* ===== MAIN ===== */
+  main{
+    max-width:1080px;
+    margin:0 auto;
+    padding:36px 20px 10px;
+  }
+  .village{
+    margin-bottom:44px;
+    scroll-margin-top:120px;
+  }
+  .village-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    color:var(--white);
+    padding:18px 22px;
+    border-radius:18px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+  }
+  .village-head.c-teal{background:linear-gradient(120deg, var(--teal) 0%, var(--teal-dark) 100%);}
+  .village-head.c-coral{background:linear-gradient(120deg, var(--coral) 0%, var(--coral-dark) 100%);}
+  .village-head.c-navy{background:linear-gradient(120deg, #17647A 0%, var(--navy) 100%);}
+  .village-head h2{font-size:19px;margin:0 0 3px;font-weight:800;}
+  .village-head p{margin:0;font-size:13px;opacity:.9;}
+  .count-badge{
+    background:rgba(255,255,255,0.22);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:12.5px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+
+  .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));
+    gap:16px;
+  }
+  .chalet-card{
+    background:var(--white);
+    border-radius:16px;
+    padding:18px;
+    box-shadow:0 6px 18px -10px rgba(11,59,74,0.18);
+    border:1px solid #F0E4D2;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:transform .18s, box-shadow .18s;
+  }
+  .chalet-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+  }
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+  }
+  .card-top h3{
+    font-size:15.5px;
+    margin:0;
+    line-height:1.4;
+    font-weight:800;
+    color:var(--navy);
+  }
+  .price{
+    background:var(--sun);
+    color:var(--navy-deep);
+    font-family:'Cairo',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    padding:6px 10px;
+    border-radius:10px;
+    white-space:nowrap;
+  }
+  .price small{font-weight:600;font-size:10px;display:block;text-align:center;}
+  .tagline{
+    margin:-4px 0 0;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--teal-dark);
+  }
+  .features{
+    margin:0;
+    padding-right:18px;
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.9;
+  }
+  .card-actions{
+    margin-top:auto;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    padding-top:8px;
+    border-top:1px dashed #EADFC9;
+  }
+  .btn{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+    font-size:12.5px;
+    font-weight:700;
+    padding:9px 8px;
+    border-radius:10px;
+    transition:opacity .2s;
+    direction:ltr;
+  }
+  .btn:hover{opacity:.85;}
+  .btn-call{background:var(--navy);color:var(--white)!important;}
+  .btn-view{background:#EAF6F4;color:var(--teal-dark)!important;border:1px solid #CFEAE5;}
+
+  .no-results{
+    display:none;
+    text-align:center;
+    color:var(--muted);
+    padding:60px 20px;
+    font-size:15px;
+  }
+
+  footer{
+    text-align:center;
+    padding:36px 20px 44px;
+    color:var(--muted);
+    font-size:13px;
+  }
+  footer .heart{color:var(--coral);}
+
+  @media (max-width:520px){
+    .hero{padding:44px 16px 100px;}
+    .toolbar{margin-top:-56px;}
+    .card-actions{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <span class="eyebrow">☀️ عاوزين نصيف ياحاج جابر ☀️</span>
+    <h1>دليلك الشامل لأحلى <span>شاليهات</span> الساحل</h1>
+    <p class="sub">مجموعة مختارة لاحلي اب في الدنيا، منظمة عشان تلاقي اللي يناسبك بسهولة — من غير ما تدور كتير. (اتعب علشانك ياباشا 😘)</p>
+    <div class="stat-row">
+      <div class="stat-pill"><b>24</b><span>شاليه متاح</span></div>
+      <div class="stat-pill"><b>11</b><span>قرية سياحية</span></div>
+      <div class="stat-pill"><b>1,500+</b><span>يبدأ السعر من (ج.م)</span></div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFF6E8" d="M0,50 C240,100 480,0 720,40 C960,80 1200,20 1440,55 L1440,100 L0,100 Z"></path>
+    </svg>
+  </div>
+
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <input id="search" type="text" placeholder="🔍 ابحث بالقرية، السعر، أو الميزة (مثال: بحر مباشر، ٣٠٠٠)...">
+      <div class="chips">
+        <a class="chip" href="#lotus">🏢 اللوتس</a>
+        <a class="chip" href="#porto">⛳ بورتو مارينا</a>
+        <a class="chip" href="#zomorroda">💎 زمردة</a>
+        <a class="chip" href="#greenbeach">🏖️ جرين بيتش</a>
+        <a class="chip" href="#aida">🌴 عايدة</a>
+        <a class="chip" href="#kartaj">🏛️ قرطاج</a>
+        <a class="chip" href="#various">🌊 قرى متنوعة</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- 1. اللوتس -->
+    <section class="village" id="lotus">
+      <div class="village-head c-teal">
+        <div><h2>قرية اللوتس</h2><p>الكيلو ٩١ — العلمين</p></div>
+        <span class="count-badge">٤ شاليهات</span>
+      </div>
+      <div class="cards-grid">
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>دوبلكس أرضي + علوي</h3><div class="price">4,000<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🚶‍♂️ ١٠ دقائق للبحر</p>
+          <ul class="features">
+            <li>الأرضي: ريسبشن، مطبخ، حمام</li>
+            <li>العلوي: ٣ غرف (٢ مكيفة) + ٣ حمامات</li>
+            <li>القرية: حمامات سباحة، بحيرة، سوق تجاري، صيدلية</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201066242078">📞 01066242078</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D9%87-%D8%AF%D9%88%D8%A8%D9%84%D9%83%D8%B3-%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1-%D9%82%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%84%D9%88%D8%AA%D8%B3-k91-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-ID503717534.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>دور ثاني علوي</h3><div class="price">2,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🚶‍♂️ ٥ دقائق للبحر</p>
+          <ul class="features">
+            <li>٣ غرف نوم (٢ مكيفة) + ٢ حمام</li>
+            <li>عند الصينية الثانية، قريب جداً من الخدمات</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201066242078">📞 01066242078</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D8%A8%D9%82%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%84%D9%88%D8%AA%D8%B3-%D9%83-%D9%A9%D9%A1-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%89-ID503717213.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>شاليه غرفتين — وسط القرية</h3><div class="price">2,800<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🚶‍♂️ ٥ دقائق للبحر والخدمات</p>
+          <ul class="features">
+            <li>غرفتين (واحدة مكيفة)، صالة مكيفة، ٢ حمام وتراس</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201118557353">📞 01118557353</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D8%BA%D8%B1%D9%81%D8%AA%D9%8A%D9%86-%D8%BA%D8%B1%D9%81%D8%AA%D9%8A%D9%86-%D9%85%D9%83%D9%8A%D9%81%D9%87-%D9%88%D8%BA%D8%B1%D9%81%D9%87-%D9%85%D8%B1%D8%A7%D9%88%D8%AD-%D9%88%D8%A7%D9%84%D8%B5%D8%A7%D9%84%D9%87-%D9%85%D9%83%D9%8A%D9%81%D9%87-%D9%81%D9%8A-%D9%82%D8%B1%D9%8A%D9%87-%D8%A7%D9%84%D9%84%D9%88%D8%AA%D8%B3-%D8%A7%D9%84%D9%83%D9%8A%D9%84%D9%88-91-ID503849715.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>شاليه ١٠٠م / ١٥٠م — اقتصادي</h3><div class="price">2,000<small>ج.م/ليلة</small></div></div>
+          <ul class="features">
+            <li>٢ غرفة نوم + ١ حمام</li>
+            <li>خيارين مساحة: ١٠٠م² أو ١٥٠م²</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201225550701">📞 01225550701</a>
+            <a class="btn btn-call" href="tel:+201028421050">📞 01028421050</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D9%81%D9%8A-%D9%82%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%84%D9%88%D8%AA%D8%B3-ID201869550.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. بورتو مارينا -->
+    <section class="village" id="porto">
+      <div class="village-head c-coral">
+        <div><h2>قرية جولف بورتو مارينا</h2><p>العلمين الجديدة — الكيلو ١١٠</p></div>
+        <span class="count-badge">٤ شاليهات</span>
+      </div>
+      <div class="cards-grid">
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>شاليه ٨٠م — عمارة ٦٠ (دور ٣)</h3><div class="price">3,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">أمام بوابة الأكوا وPorto Walk</p>
+          <ul class="features">
+            <li>مكيف بالكامل، ٢ حمام، مجهز لـ ٨ أفراد</li>
+            <li>٣ بلكونات بإطلالة على حمامات السباحة</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201224795585">📞 01224795585</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%81%D9%8A-%D8%AC%D9%88%D9%84%D9%81-%D8%A8%D9%88%D8%B1%D8%AA%D9%88-%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7-ID208599546.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>غرفتين سوبر لوكس</h3><div class="price">3,000<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🏊 على البسين مباشرة</p>
+          <ul class="features">
+            <li>غرفة ماستر + غرفة ثانية، ٢ حمام، مكيف بالكامل</li>
+            <li>القرية: ٥٨ حمام سباحة، أكوا بارك، بحر صناعي بموج</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201111173334">📞 01111173334</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%81%D8%A7%D8%AE%D8%B1-%D8%AC%D8%AF%D8%A7-%D9%81%D9%8A-%D8%A8%D9%88%D8%B1%D8%AA%D9%88-%D8%AC%D9%88%D9%84%D9%81-%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D9%86-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D9%87-ID208469726.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>شاليه فرش جديد — أول سكن</h3><div class="price">2,800<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🏊 على البسين مباشرة</p>
+          <ul class="features">
+            <li>فرش جديد بالكامل، قريب من ممشى القرية</li>
+            <li>القرية بها كارفور، فتح الله، براندات مطاعم وملاعب جولف</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201060880382">📞 01060880382</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D9%84%D9%8A%D9%87-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A8%D8%B1%D8%AA%D9%88-%D8%AC%D9%88%D9%84%D9%81-%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D9%86-ID503782026.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>شاليه بورتو جولف</h3><div class="price">2,850<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">على الممشى السياحي</p>
+          <ul class="features">
+            <li>وصول للشاطئ الخاص (أوهانا بيتش) والألعاب المائية</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201060880382">📞 01060880382</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D9%84%D9%8A%D9%87-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A8%D8%B1%D8%AA%D9%88-%D8%AC%D9%88%D9%84%D9%81-%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7-ID503782108.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. زمردة -->
+    <section class="village" id="zomorroda">
+      <div class="village-head c-navy">
+        <div><h2>قرية زمردة</h2><p>الكيلو ٥٢ – ٥٣</p></div>
+        <span class="count-badge">٣ شاليهات — صف أول بحر</span>
+      </div>
+      <div class="cards-grid">
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>أرضي بجاردن — صف أول</h3><div class="price">5,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🌊 فيو بحر وبحيرة</p>
+          <ul class="features">
+            <li>٣ غرف مكيفة + ٢ حمام + مطبخ</li>
+            <li>القرية: ٧ حمامات سباحة، أكوا بارك، ملاعب مجانية، كيدز إريا</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201030506635">📞 01030506635</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%A7%D9%8F%D9%81%D8%B6%D9%84-%D9%85%D9%88%D9%82%D8%B9-%D8%B4%D8%A7%D9%84%D9%8A%D9%87-%D8%B5%D9%81-%D8%A7%D9%88%D9%84-%D8%A8%D8%AD%D8%B1-%D9%88-%D8%B5%D9%81-%D8%A7%D9%88%D9%84-%D8%A8%D8%AD%D9%8A%D8%B1%D8%A9-%D9%81%D9%8A-%D9%82%D8%B1%D9%8A%D8%A9-%D8%B2%D9%85%D8%B1%D8%AF%D8%A9-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D8%A7%D9%84%D9%83%D9%8A%D9%84%D9%88-53-ID503734837.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>أرضي/أول بحديقة وتراس</h3><div class="price">5,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🌊 صف أول ع البحر</p>
+          <ul class="features">
+            <li>٣ غرف (منها غرفة على البحر مباشر) + ٢ حمام + مطبخ مجهز وشاشة ٤٣</li>
+            <li>قريبة من بوابة ٣ وفتح الله ماركت وكارفور</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201115554424">📞 01115554424</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B9%D8%B1%D8%B6-%D8%AE%D8%A7%D8%B5-%D9%82%D8%B1%D9%8A%D8%A9-%D8%B2%D9%85%D8%B1%D8%AF%D8%A9-ID168030045.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>أرضي بحديقة خاصة</h3><div class="price">4,600<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🌊 صف أول مباشر</p>
+          <ul class="features">
+            <li>مجدد بالكامل، Wi-Fi، شاشة ٥٥، ثلاجتين وشيزلونج للبحر</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201011923938">📞 01011923938</a>
+            <a class="btn btn-call" href="tel:+201002165469">📞 01002165469</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D8%B5%D9%81-%D8%A7%D9%88%D9%84-%D8%B9%D9%84%D9%8A-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-ID197262719.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. جرين بيتش -->
+    <section class="village" id="greenbeach">
+      <div class="village-head c-teal">
+        <div><h2>قرية جرين بيتش</h2><p>الكيلو ٨٨ – ٨٩ — العلمين</p></div>
+        <span class="count-badge">٣ شاليهات</span>
+      </div>
+      <div class="cards-grid">
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>أرضي بحديقة وأرجوحة</h3><div class="price">4,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">كـ ٨٩ — مناسب للعائلات</p>
+          <ul class="features">
+            <li>٣ غرف مكيفة، ٣ حمامات، مطبخ واسع، مظلة سيارات خاصة</li>
+            <li>القرية: مسبحين، أكوا بارك، سوق تجاري، عيادة، ATM</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201228066325">📞 01228066325</a>
+            <a class="btn btn-call" href="tel:+201061414533">📞 01061414533</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/chalet-for-rent-in-green-beach-k-89-with-a-large-private-garden-ID197359249.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>ثاني صف بحر — بانوراما</h3><div class="price">4,000<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">كـ ٨٩</p>
+          <ul class="features">
+            <li>٣ غرف نوم (غرفة ماستر) + ٣ حمامات</li>
+            <li>تراس بإطلالة رائعة على البحر</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201016027003">📞 01016027003</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-ID208105322.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>شاليه بفيلا على البحر</h3><div class="price">3,800<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">كـ ٨٨ — قبل مارينا ٥ كم</p>
+          <ul class="features">
+            <li>٣ غرف مكيفة، ٢ حمام، حديقة، جراج ومصعد خاص</li>
+            <li>القرية: سينما صيفي، ملاعب، بلياردو وبلايستيشن</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201042142187">📞 01042142187</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D8%A8%D9%81%D9%8A%D9%84%D8%A7-%D8%B9%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D8%A8%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1-ID503667246.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. عايدة -->
+    <section class="village" id="aida">
+      <div class="village-head c-coral">
+        <div><h2>قرية عايدة / مصر الجديدة</h2><p>الكيلو ٧٧ — الحمام</p></div>
+        <span class="count-badge">٣ شاليهات اقتصادية</span>
+      </div>
+      <div class="cards-grid">
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>أرضي بلكونة وشواية</h3><div class="price">1,800<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">داخل كومباوند بالقرية</p>
+          <ul class="features">
+            <li>٣ غرف (٢ مكيفة منها ماستر) + ٢ حمام، بسين خاص</li>
+            <li>٥ دقائق مشي للبحر — للعائلات فقط</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201553050700">📞 01553050700</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%85%D9%83%D9%8A%D9%81-%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1-%D8%A8%D9%82%D8%B1%D9%8A%D8%A9-%D8%B9%D8%A7%D9%8A%D8%AF%D8%A9-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-ID208554415.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>دور أول — خلف البيسين</h3><div class="price">1,800<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">قريب من الخدمات</p>
+          <ul class="features">
+            <li>غرفتين وصالة واسعة (تفتح سرير)، مطبخ أمريكاني، Wi-Fi</li>
+            <li>أكوا بارك أطفال على البيسين المباشر</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201066933737">📞 01066933737</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D9%82%D8%B1%D9%8A%D9%87-%D9%85%D8%B5%D8%B1-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D9%87-%D8%B9%D8%A7%D9%8A%D8%AF%D8%A9-ID205744905.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>دور أول علوي</h3><div class="price">1,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">قريب من حمام السباحة</p>
+          <ul class="features">
+            <li>٣ غرف نوم + ٢ حمام، جاهز ومفروش بالكامل</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201227134986">📞 01227134986</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%82%D8%B1%D9%8A%D8%A9-%D8%B9%D8%A7%D9%8A%D8%AF%D8%A9-%D9%85%D8%B5%D8%B1-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D9%87-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D8%A7%D9%84%D9%83%D9%8A%D9%84%D9%88-%D9%A7%D9%A7-ID201513432.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. قرطاج -->
+    <section class="village" id="kartaj">
+      <div class="village-head c-navy">
+        <div><h2>قرية قرطاج</h2><p>الكيلو ٨١ — العلمين</p></div>
+        <span class="count-badge">شاليهان</span>
+      </div>
+      <div class="cards-grid">
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>أرضي بحديقتين</h3><div class="price">3,750<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">حديقة أمامية وخلفية</p>
+          <ul class="features">
+            <li>غرف مكيفة، مطبخ مجهز، أمن ٢٤ ساعة وكاميرات مراقبة</li>
+            <li>القرية: بسينات للسيدات، سينما توليب، كافيه وبلايستيشن</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201553002768">📞 01553002768</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D8%B9%D9%84%D9%8A-%D8%A3%D8%AC%D9%85%D9%84-%D8%B4%D8%A7%D8%B7%D8%A6-%D8%A8%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D9%82%D8%B1%D9%8A%D8%A9-%D9%82%D8%B1%D9%8A%D8%B7%D8%A7%D8%AC-%D8%A7%D9%84%D9%83%D9%8A%D9%84%D9%88-%D9%A8%D9%A1-ID201889375.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>شقة مجهزة بالكامل</h3><div class="price">4,000<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">تكييف لجميع الغرف</p>
+          <ul class="features">
+            <li>أجهزة وفرش جديد كلياً، قريبة من المطاعم والخدمات</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201501155550">📞 01501155550</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D8%A8%D9%82%D8%B1%D9%8A%D9%87-%D9%82%D8%B1%D8%B7%D8%A7%D8%AC-%D8%A8%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-ID197898637.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. قرى متنوعة -->
+    <section class="village" id="various">
+      <div class="village-head c-coral">
+        <div><h2>قرى متنوعة ومتميزة</h2><p>دياموند بيتش · جرين ليفز · مراقيا · تاهيتي باي · الروضة</p></div>
+        <span class="count-badge">٥ شاليهات</span>
+      </div>
+      <div class="cards-grid">
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>دياموند بيتش</h3><div class="price">4,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">كـ ٩٠.٥ — دقيقة للبحر</p>
+          <ul class="features">
+            <li>٣ غرف (٢ مكيفة)، شاطئ خاص، ٥ حمامات سباحة</li>
+            <li>سوق تجاري به كنتاكي وبيم</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201288066390">📞 01288066390</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D9%82%D9%87-%D8%AA%D8%B1%D8%A6-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D9%85%D8%AA%D8%A7%D8%AD%D9%87-%D9%81%D9%82%D8%B7-%D8%A8%D8%AF%D8%A7%D9%8A%D9%87-%D9%85%D9%86-%D8%A7%D8%BA%D8%B3%D8%B7%D8%B3-%D8%A8%D9%82%D8%B1%D9%8A%D9%87-%D8%AF%D9%8A%D8%A7%D9%85%D9%88%D9%86%D8%AF%D8%A8%D9%8A%D8%AA%D8%B4-%D8%A7%D9%84%D9%83%D9%8A%D9%84%D9%88-%D9%A9%D9%A0-ID503731752.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>جرين ليفز</h3><div class="price">3,500<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">كـ ٧٥ — أرضي بحديقة</p>
+          <ul class="features">
+            <li>غرفتين مكيفة + ريسبشن وتراس وحديقة</li>
+            <li>٥ بسينات، أكوا بارك وجيم</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201224465645">📞 01224465645</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D8%A8%D8%AC%D8%B1%D9%8A%D9%86-%D9%84%D9%8A%D9%81%D8%B2-%D9%83-%D9%A7%D9%A5-ID201555918.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>مراقيا</h3><div class="price">2,800<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">🌊 أرضي صف أول بحر</p>
+          <ul class="features">
+            <li>٧٠م²، غرفتين مكيفة، حديقة خاصة ببرجولا</li>
+            <li>خطوات للبيسين مباشرة</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201001461852">📞 01001461852</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D8%A3%D8%B1%D8%B6%D9%8A-%D8%B5%D9%81-%D8%A3%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D9%81%D9%8A-%D9%85%D8%B1%D8%A7%D9%82%D9%8A%D8%A7-%D8%AD%D8%AF%D9%8A%D9%82%D8%A9-%D8%AE%D8%A7%D8%B5%D8%A9-%D9%85%D9%83%D9%8A%D9%81%D8%A9-%D8%A8%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%84-ID208064556.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>تاهيتي باي</h3><div class="price">2,800<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">خليج الجرولة — كـ ٢٢ مطروح</p>
+          <ul class="features">
+            <li>غرفتين + ريسبشن، ثالث نمرة من البحر (فيو بحر وبسين)</li>
+            <li>٢ أكوا بارك</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201020965873">📞 01020965873</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D9%85%D9%81%D8%B1%D9%88%D8%B4-%D8%A7%D8%B3%D8%B1%D9%87-%D9%81%D9%82%D8%B7-%D9%81%D9%8A-%D8%AA%D8%A7%D9%87%D9%8A%D8%AA%D9%8A-%D8%A8%D8%A7%D9%8A-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D9%81%D9%8A%D9%88-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D9%81%D8%B1%D8%B4-%D8%B1%D8%A7%D9%82%D9%8A-ID502066030.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+        <div class="chalet-card">
+          <div class="card-top"><h3>الروضة</h3><div class="price">2,750<small>ج.م/ليلة</small></div></div>
+          <p class="tagline">كـ ٧١ الساحل</p>
+          <ul class="features">
+            <li>٣ غرف مكيفة، شاشة سمارت، Wi-Fi</li>
+            <li>روف علوي مجهز للشواء، أكوا بارك</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn btn-call" href="tel:+201012891205">📞 01012891205</a>
+            <a class="btn btn-call" href="tel:+201204168947">📞 01204168947</a>
+            <a class="btn btn-view" href="https://www.dubizzle.com.eg/ad/%D8%B4%D8%A7%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%A7%D9%8A%D8%AC%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%83-ID208343149.html" target="_blank" rel="noopener">🔗 عرض الإعلان</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <p class="no-results" id="noResults">مفيش نتائج مطابقة 🏝️ — جرب كلمة تانية</p>
+
+  </main>
+
+  <footer>
+    كل أرقام التواصل وروابط الإعلانات قابلة للضغط مباشرة 📱 — نتمنالك إجازة حلوة <span class="heart">♥</span>
+  </footer>
+
+<script>
+  // Search / filter
+  const search = document.getElementById('search');
+  const villages = document.querySelectorAll('.village');
+  const noResults = document.getElementById('noResults');
+
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    let anyVisible = false;
+
+    villages.forEach(v => {
+      const cards = v.querySelectorAll('.chalet-card');
+      let villageHasMatch = false;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const headText = v.querySelector('.village-head').textContent.toLowerCase();
+        const match = !q || text.includes(q) || headText.includes(q);
+        card.style.display = match ? '' : 'none';
+        if (match) villageHasMatch = true;
+      });
+
+      v.style.display = villageHasMatch ? '' : 'none';
+      if (villageHasMatch) anyVisible = true;
+    });
+
+    noResults.style.display = anyVisible ? 'none' : 'block';
+  });
+
+  // Active chip highlighting on scroll
+  const chips = document.querySelectorAll('.chip');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const chip = document.querySelector('.chip[href="#' + id + '"]');
+      if (!chip) return;
+      if (entry.isIntersecting) {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+
+  villages.forEach(v => observer.observe(v));
+</script>
+
+</body>
+</html>
